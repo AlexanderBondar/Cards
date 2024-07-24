@@ -39,6 +39,7 @@ struct ResizableView: ViewModifier {
             .onEnded { _ in
                 previousRotation = .zero
             }
+        
         content
             .frame(
                 width: transform.size.width,

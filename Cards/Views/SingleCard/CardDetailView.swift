@@ -18,13 +18,11 @@ struct CardDetailView: View {
             Group {
                 Capsule()
                     .foregroundColor(.yellow)
-//                    .resizableView()
                 Text("Resize Me!")
                     .fontWeight(.bold)
                     .font(.system(size: 500))
                     .minimumScaleFactor(0.01)
                     .lineLimit(1)
-//                    .resizableView()
             }
             .resizableView()
             
@@ -36,16 +34,7 @@ struct CardDetailView: View {
     
     var body: some View {
         content
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: { viewState.showAllCards.toggle() }) {
-                        Text("Done")
-                    }
-                }
-                ToolbarItem(placement: .bottomBar) {
-                  CardBottomToolbar(cardModal: $currentModal)
-                }
-            }
+            .modifier(CardToolbar(currentModal: $currentModal))
     }
 }
 

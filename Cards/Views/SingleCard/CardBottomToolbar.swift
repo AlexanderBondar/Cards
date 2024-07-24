@@ -47,7 +47,6 @@ struct ToolbarButtonView: View {
     
     let modal: CardModal
 
-    
     var body: some View {
         if let text = modalButton[modal]?.text,
            let imageName = modalButton[modal]?.imageName {
